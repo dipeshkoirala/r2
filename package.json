@@ -1,0 +1,26 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "Product Vision Document: https://docs.google.com/document/d/1Y7g3nzO796J9i31bvkHL7yont0cQ0TLAqkkbEshgT3Y/",
+  "main": "server.js",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "framer-motion": "^2.6.13",
+    "recharts": "^1.8.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anywhere-fitness-2-sept20/front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anywhere-fitness-2-sept20/front-end/issues"
+  },
+  "homepage": "https://github.com/anywhere-fitness-2-sept20/front-end#readme"
+}
