@@ -26,7 +26,7 @@ let b=Math.random(a)
     animate={{ rotate: 360 }  }
     transition={{ duration: b }}>
 
-<img className="logo1" src="https://images.unsplash.com/photo-1553604313-0ab9f355d4d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
+<img className="logo1" src="https://images.unsplash.com/photo-1541795021-f8b60a1a456d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
      
  
 
