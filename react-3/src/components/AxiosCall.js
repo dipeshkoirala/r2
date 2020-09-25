@@ -8,7 +8,7 @@ export const AxiosCall = () => {
     headers: {
       Authorization: token,
     },
-    withCredentials:true
+    // withCredentials:true
     // ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98
   });
 
