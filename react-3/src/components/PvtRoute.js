@@ -13,7 +13,7 @@ const PvtRoute = ({ component: Component, ...rest }) => {
           } else {
             // redirect to login
             console.log("redirecting!");
-            return <Redirect to="/login" />;
+            return <Redirect to="/fitness/login" />;
           }
         }}
       />

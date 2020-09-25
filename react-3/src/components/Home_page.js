@@ -7,7 +7,7 @@ import Running from '../components/mir-mitchelle/Running';
 import Boxing from '../components/mir-mitchelle/Boxing';
 import Cardio from '../components/mir-mitchelle/Cardio';
 import InstructorSignUp from '../components/mir-mitchelle/InstructorSignUp';
-import ClientSignUp from '../components/mir-mitchelle/ClientSignUp';
+import ClientSignUp from './mir-mitchelle/Signup';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // import Login from '../components/Login'
 // import '../App..css';

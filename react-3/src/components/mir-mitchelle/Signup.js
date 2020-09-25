@@ -28,7 +28,7 @@ const StyledLabel = styled.label`
 
 
 
-const UserSignUp = () => {
+const SignUp = () => {
 
     const initialState = {
         name: "",
@@ -198,4 +198,4 @@ const UserSignUp = () => {
                         
 }
 
-export default UserSignUp;
+export default SignUp;

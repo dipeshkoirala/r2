@@ -8,7 +8,7 @@ function Home () {
         <>
 
         <div>
-            <h1>Choice Your Favorite Workout!</h1>
+            <h1>Choose Your Favorite Workout!</h1>
            <Cards />
            <Link to='/clientsignup'>
                 <button>Client Sign-Up</button>

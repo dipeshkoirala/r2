@@ -1,70 +1,80 @@
-// import React, { Component } from "react";
-// import axios from "axios";
+import React, { Component } from 'react';
+import {AxiosCall} from './AxiosCall';
 
-// export class Login extends Component {
-//   state = {
+export default class Login extends Component {
     
-//         name:"",
-//       username: "",
-//       password: "",
-//       role:"",
+        state = {
 
-//     arr:[]
-//   };
-//   handleChange = (e) => {
-//     this.setState({
-//       credentials: {
-//         ...this.state.credentials,
-//         [e.target.name]: e.target.value,
-//       },
-//     });
-//   };
-//   login = (e) => {
-//     e.preventDefault();
-    
-//     axios
-//     // .get(`https://anytime-fitness-database.herokuapp.com/api/fitness/login`)
-//     .post('https://anytime-fitness-database.herokuapp.com/api/fitness/register', this.state.arr)
-//       .then((res) => {
-//         console.log(res);
-//        // localStorage.setItem("token", res.data.payload);
-        
-//         // this.props.history.push("/fitness");
-//       })
-//       .catch((err) => console.log({ err }));
-//   };
 
-//   render() {
-//     return (
-//       <div>
-//         <h1>This is Login page</h1>
-//         <div>
-//           <form onSubmit=     
-//               {this.login}>
-             
             
-//             <input
-//               type="text"
-//               name="username"
-//               value={this.state.credentials.username}
-//               onChange={this.handleChange}
-//             />
-//             <input
-//               type="password"
-//               name="password"
-//               value={this.state.credentials.password}
-//               onChange={this.handleChange}
-//             />
-//             <select id='role' name='role' onChange={this.handleChange} value={this.state.credentials.role}>
-//         <option value='client'>Client</option>
-//         <option value='instructor'>Instructor</option>
-//                     </select>
-//             <button>Log in</button>
-//           </form>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+            username: "",
+            password: "",
+            role:"",
+            
+            
+            
+        }
 
-// export default Login;
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+    
+
+    handleChange=(e)=> {
+        e.preventDefault();
+      this.setState({
+        //  ...this.state, 
+         [e.target.name]: e.target.value,
+      
+    });
+    }
+
+    handleSubmit=(e)=> {
+        e.preventDefault();
+       
+
+        AxiosCall()
+        .post("/login",this.state   /* , {withCredentials: true }  */   )
+        .then(res => {
+            console.log(res)
+            console.log("dk-check the response:", res);
+            
+            localStorage.setItem("token",res.data.token)
+            // console.log(token)
+            this.props.history.push('/fitness')
+                     
+        })
+        .catch(error => {
+            console.log("Login error", {error});
+        });
+        // console.log("form submitted");
+        // event.preventDefault();
+    }
+    render(){
+        return (<div className="login-container">
+            <form onSubmit={this.handleSubmit}>
+                <input className="login" type="text"
+                 name="username" 
+                 placeholder="username" 
+                 value={this.state.username}
+                  onChange={this.handleChange} /* required  */
+                  />
+
+                 <input className="login" type="password"
+                 name="password" 
+                 placeholder="password" 
+                 value={this.state.password}
+                  onChange={this.handleChange}
+                //    required 
+                  /> 
+                  <label htmlFor='role'>Role:
+                  <select id='role' name='role' onChange={this.handleChange} value={this.state.role}>
+                        <option>Select your role</option>
+                        <option value='client'>Client</option>
+                        <option value='instructor'>Instructor</option>
+                    </select>  
+                    </label>           
+                  <button className="login-btn" >Login</button>
+            </form>
+            </div>);
+    }
+}

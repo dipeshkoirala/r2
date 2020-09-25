@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export class ExerciseList extends Component {
   render() {
@@ -6,6 +7,7 @@ export class ExerciseList extends Component {
       return <h5 className="p-2">No exercise Available</h5>;
     }
    else return  this.props.exercise.map((ex,index) => (
+<Link key={index} to ={`/exercise/${index+1}`}>
       <div className="card m-1 p-2 bg-info text-white" key={index}>
         <h3>
           {ex.name}
@@ -33,6 +35,7 @@ export class ExerciseList extends Component {
         <button className='btn btn-danger  float-center'
           onClick={()=>this.props.addPurchase(ex)}>Purchase</button>
       </div>
+      </Link>
     ));
   }
 }
