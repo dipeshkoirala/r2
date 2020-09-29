@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
+// import { addPurchase } from "../dataF/PurchaseActionCreators";
 
 export class ExerciseList extends Component {
+  
   render() {
     if (this.props.exercise == null || this.props.exercise.length === 0) {
       return <h5 className="p-2">No exercise Available</h5>;
     }
-   else return  this.props.exercise.map((ex,index) => (
-<Link key={index} to ={`/exercise/${index+1}`}>
+    return  this.props.exercise.map((ex,index) => (
+
       <div className="card m-1 p-2 bg-info text-white" key={index}>
         <h3>
           {ex.name}
@@ -34,8 +36,10 @@ export class ExerciseList extends Component {
         </h3>
         <button className='btn btn-danger  float-center'
           onClick={()=>this.props.addPurchase(ex)}>Purchase</button>
+        
       </div>
-      </Link>
+      /* <Link key={index} to ={`/exercise/${index+1}`}> */
+      // </Link>
     ));
   }
 }

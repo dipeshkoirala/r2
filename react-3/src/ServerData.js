@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 import {
   // BrowserRouter as Router,
   Route,
-  // Switch,
+  Redirect, Switch,
  
 } from "react-router-dom";
 import { ExerciseConnector } from "./components/ExerciseConnecter";
@@ -36,7 +36,7 @@ export default class ServerData extends Component {
           
        
             <Route path="/fitness" component={ExerciseConnector} />
-          
+          <Redirect to ="/fitness"/>
        
         
     </div>

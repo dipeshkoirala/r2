@@ -66,3 +66,38 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+## Method | Endpoint | Description
+
+| POST | /register | Creates a `user`. Requires: name, username, password, role.
+| POST | /login | Logs a user in.
+| GET | /classes | Returns a list of all available classes. User must be logged in.
+| GET | /classes/:classId | Returns details for each class
+| GET | /instructors | Returns a list of instructors
+
+# Instructor Endpoints
+
+Insructor endpoints return a 403 error when clients attempt to access.
+
+## Method | Endpoint | Description
+
+| GET | /instructors/clients | Returns a list of all clients
+| GET | /:instructorId/classes | Returns a list of all classes from instructor with matching id
+| GET | /instructors/:instructorId/classes | Returns a list of all fitness classes and clients in each of the classes that the instructor is hosting
+| POST | /instructors/:instructorId/classes | Add new class for the instructor.
+Requires: name, type, intensity, max_clients, day, start_time, duration, location
+
+| PUT | /:instructorId/classes/:classId | Updates existing class
+Requires: name, type, intensity, max_clients, day, start_time, duration, location
+
+| DELETE | /:instructorId/classes/:classId | Deletes existing class
+
+# Client endpoints to come
+
+## Method | Endpoint | Description
+
+| POST | /clients/:clientId | Allows client to join a fitness class
+| PUT | /clients/:clientId | Allows client to update their information
+| DELETE | /clients/:clientId/classes/:classId| Removes client from class (currently broken)

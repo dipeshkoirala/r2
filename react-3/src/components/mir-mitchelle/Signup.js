@@ -67,7 +67,7 @@ const SignUp = () => {
 
 
     return (
-        <WrapperDiv>
+        <WrapperDiv className="login-container bg-dark col-10 p-5 m-4 float-center p-2 text-white">
             <h1>User Sign-up Form</h1>
             <StyledForm onSubmit= {submitForm}>
             <StyledLabel htmlFor='name'>Name: 

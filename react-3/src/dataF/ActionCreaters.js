@@ -9,21 +9,22 @@ export const loadData = (dataType) => ({
   },
 });
 
-export const addPurchase=(pkt,price,quantity)=>({
+
+export const addPurchase=(product,quantity)=>({
   type:ActionTypes.EXERCISE_ADD,
   payload:{
-    pkt,
-    price,
-    quantity:quantity||1
+    product,
+   
+    auantity:quantity||1
   }
 })
 
-export const updatePurchase=(pkt,price,quantity)=>({
+export const updatePurchase=(pkt,people)=>({
   type:ActionTypes.EXERCISE_UPDATE,
   payload:{
     pkt,
-    price,
-    quantity:quantity
+    
+    people:people
   }
 })
 

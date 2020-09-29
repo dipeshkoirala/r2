@@ -10,13 +10,28 @@ import UpdateExercise from './components/ServerComponents/UpdateExercise'
 const ServerData1 = () => {
   const [savedList, setSavedList] = useState([]);
   const [exerciseList, setExerciseList] = useState([]);
+  const [client, setClient]=useState([])
 
   const getExerciseList = () => {
     AxiosCall()
-      .get("/exercise")
-      .then(res => setExerciseList(res.data))
+    .get(`/instructors/clients`)
+      
+      .then(res =>{ console.log("dk-Checkthis out:::=>",res.data)
+       setExerciseList(res.data)})
       .catch(err => console.log(err.response));
   };
+/* useEffect(()=>{ */
+    const getClientList = () => {
+    AxiosCall()
+    .get(`/classes`)
+      
+      .then(res =>{ console.log("dk-Checkthis out:::=>",res.data)
+       setClient(res.data)})
+      .catch(err => console.log(err.response));
+  };
+
+/* ,[]) */
+
 
   const addToSavedList = ex => {
     setSavedList([...savedList, ex]);
@@ -24,20 +39,29 @@ const ServerData1 = () => {
 
   useEffect(() => {
     getExerciseList();
+    
+    
+  }, []);
+
+  useEffect(() => {
+   getClientList();
+    
+    
   }, []);
 
   return (
     <>
-      <SavedList list={savedList} />
+      <SavedList list={savedList}  />
+      
      
-      <Route exact path="/">
-        <ExerciseList exercise={exerciseList} />
-      </Route>
+      {/* <Route exact path="/"> */}
+        <ExerciseList exercise={exerciseList} client={client} />  {/* 1.lets do it first */}
+      {/* </Route> */}
 
-      <Route path="/exercise/:id">
+       {/* <Route path="/exercise/:id">  */}
         <Exercise addToSavedList={addToSavedList} />
-      </Route>
-
+     {/*   </Route>  */}
+ 
       <Route path="/update-exercise/:id"
      render={()=> <UpdateExercise exercise={exerciseList} setExerciseList={setExerciseList} addToSavedList={addToSavedList}/>}
       />

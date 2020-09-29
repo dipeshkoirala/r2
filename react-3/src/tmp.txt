@@ -13,7 +13,7 @@ import {  Switch, Route , Link ,Redirect} from 'react-router-dom'
 import Login from '../src/components/Login'
 // import '../src/App..css';
 // import WeightLifting from '../src/components//mir-mitchelle/WeightLifting';
-import ServerData from './ServerData1'
+import ServerData from './ServerData'
 import Toggle from './components/DarkMode'
  import PvtRoute from './components/PvtRoute';
 
@@ -25,35 +25,38 @@ function App() {
     <div className="App">
       
       <h1 className="bg-dark text-white text-center white-border m-2 p-5">Anywhere Fitness 
-      <span className="sp float-right"><Toggle/></span>
-     
+      <span className="sp float-right"><Toggle/></span></h1>
+     {/* <br></br> */}
      <br></br>
-     <h3>
-     <Link to ='/signup'> <button type="button" className="login btn-primary col-2 m-2 p-2 float-right" > Sign Up</button> </Link> 
-     <Link to ='/login'><button type="button" className="signup btn-primary col-2 m-2 p-2 float-right" >Login</button></Link> 
-     </h3></h1>
-     
+     <div>
+     <Link to ='/signup'> <button type="button" className="login btn-primary m-2 p-2 float-right" > Sign Up</button> </Link> 
+     <Link to ='/login'><button type="button" className="signup btn-primary m-2 p-2 float-right" >Login</button></Link> 
+     </div>
     <div>
     <Route  path='/signup' component={SignUp}/>
     <Route  path='/login' component={Login}/>
-    <Switch> 
-    <PvtRoute exact path='/protected' component={ServerData}/>
-        <Route path='/'  component={Cards} />
-        <Route component={Cards}/>
-        
-       
-       </Switch> 
     </div>
+      {/* <Link to ='/signup'> <button type="button" className="login btn-primary m-2 p-2 float-right" > Sign Up</button> </Link> */}
+      {/* <Link to ='/signup'>  Sign Up </Link> */}
+      {/* <Link to ='/login'><button type="button" className="signup btn-primary m-2 p-2 float-right" >Login</button></Link> </h1> */}
+    {/*   <Link to ='/login'>Login</Link> </h1>*/}
+       {/* <Login/>  */}
+     {/* <SignUp/> */}
+     {/* <ServerData/>
+      <Cards/> */}
   
-  
-      
-     
-       {/* <Route path='/signup' component={SignUp}/>
+      <Switch> 
+      <PvtRoute exact path='/protected' component={ServerData}/>
+        <Route path='/'  component={Cards} />
+        
+        {/* <Route path='/signup' component={SignUp}/>
         
         <Route path='/login' component={Login}/>
         <Redirect to='/login'/> */}
         
      {/* <Route component={SignUp}/> */}
+       </Switch> 
+      
 <Footer/>
     </div>
   );

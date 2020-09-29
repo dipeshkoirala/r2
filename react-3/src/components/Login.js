@@ -15,8 +15,7 @@ export default class Login extends Component {
             
         }
 
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
+      
     
 
     handleChange=(e)=> {
@@ -40,26 +39,28 @@ export default class Login extends Component {
             
             localStorage.setItem("token",res.data.token)
             // console.log(token)
-            this.props.history.push('/fitness')
+            this.props.history.push('/protected')
+            
                      
         })
         .catch(error => {
             console.log("Login error", {error});
         });
-        // console.log("form submitted");
-        // event.preventDefault();
+        
     }
     render(){
-        return (<div className="login-container">
+        return (
+        
+         <div className="login-container bg-dark col-10 p-5 float-center p-2 ">
             <form onSubmit={this.handleSubmit}>
-                <input className="login" type="text"
+                <input className="login p-2 m-3" type="text"
                  name="username" 
                  placeholder="username" 
                  value={this.state.username}
                   onChange={this.handleChange} /* required  */
                   />
 
-                 <input className="login" type="password"
+                 <input className="login p-2 m-3" type="password"
                  name="password" 
                  placeholder="password" 
                  value={this.state.password}
@@ -67,13 +68,13 @@ export default class Login extends Component {
                 //    required 
                   /> 
                   <label htmlFor='role'>Role:
-                  <select id='role' name='role' onChange={this.handleChange} value={this.state.role}>
+                  <select id='role' name='role' className='login p-2 m-2' onChange={this.handleChange} value={this.state.role}>
                         <option>Select your role</option>
                         <option value='client'>Client</option>
                         <option value='instructor'>Instructor</option>
                     </select>  
                     </label>           
-                  <button className="login-btn" >Login</button>
+                  <button className="login-btn btn-success p-2 m-3" >Login</button>
             </form>
             </div>);
     }

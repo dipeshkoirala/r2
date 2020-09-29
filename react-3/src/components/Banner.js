@@ -21,7 +21,7 @@ let b=Math.random(a)
   
    
    
-  <motion.span className="logo"
+  <motion.span className="logo login-container bg-dark col-1 p-5 float-left p-2"
     style={styles}
     animate={{ rotate: 360 }  }
     transition={{ duration: b }}>

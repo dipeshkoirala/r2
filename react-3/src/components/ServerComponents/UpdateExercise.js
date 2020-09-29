@@ -20,7 +20,7 @@ const UpdateExercise=(props)=>{
     const {id}=useParams();
     useEffect(()=>{
         axios
-        .get(`http://localhost:5000/api/exies/${id}`)
+        .get(`/classes/${id}`)
         .then((res)=>{
             
            // console.log(res.data)

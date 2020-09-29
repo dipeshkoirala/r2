@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PurchaseReducer } from "../dataF/ExerciseReducer";
+
 import { CategoryNav } from "./CategoryNav";
 import { ExerciseList } from "./ExerciseList";
 import {PurchaseSummary} from './PurchaseSummary'
@@ -21,7 +21,8 @@ export class Exercise extends Component {
             />
           </div>
           <div className="col-9 p-2">
-            <ExerciseList exercise={this.props.exercise} />
+            <ExerciseList exercise={this.props.exercise} 
+            addPurchase={this.props.addPurchase} />
           </div>
         </div>
       </div>
